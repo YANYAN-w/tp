@@ -44,7 +44,7 @@ public class EditStudentCommand extends Command {
         + "Example: " + COMMAND_WORD + " "
         + PREFIX_STUDENT_NUMBER + "A0123456P"
         + PREFIX_STUDENT_NAME + "John Doe "
-        + PREFIX_EMAIL + "johnd@example.com "
+        + PREFIX_EMAIL + "johnd@u.nus.edu "
         + PREFIX_TAG + "good at UI ";
 
 
@@ -52,6 +52,8 @@ public class EditStudentCommand extends Command {
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
     public static final String MESSAGE_DUPLICATE_PERSON = "This student already exists in the address book.";
     public static final String MESSAGE_STUDENT_NOT_FOUND = "The given student number is not found in the address book.";
+    public static final String MESSAGE_INVALID_FIELD_GROUP_NAME =
+        "Group assignment should not be changed via edit student function.";
 
     private final StudentNumber studentNumber;
     private final EditPersonDescriptor editPersonDescriptor;
