@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
+import java.util.Locale;
 
 
 /**
@@ -85,10 +86,10 @@ public class Deadline implements Comparable<Deadline> {
 
     @Override
     public String toString() {
-        return time.format(DateTimeFormatter.ofPattern(DATETIME_OUTPUT_FORMAT));
+        return time.format(DateTimeFormatter.ofPattern(DATETIME_OUTPUT_FORMAT, Locale.ENGLISH));
     }
 
     public String deadlineInInputFormat() {
-        return time.format(DateTimeFormatter.ofPattern(DATETIME_FORMAT));
+        return time.format(DateTimeFormatter.ofPattern(DATETIME_FORMAT, Locale.ENGLISH));
     }
 }
