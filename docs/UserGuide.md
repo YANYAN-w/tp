@@ -471,7 +471,7 @@ This screenshot shows the result of executing `sort_g`.
 
 #### Listing Tasks: `list_t`, `lt`
 
-Show a list of all tasks in the T_Assistant.
+Shows a list of all tasks in the T_Assistant.
 
 **Format**: `list_t [gn/GROUP_NAME]`
 
@@ -612,7 +612,7 @@ This screenshot shows the result of executing `add_et_g i/1 gn/CS2103-S1-21`.
 #### Deleting a Task from a Group: `del_t_g`, `dtg`
 
 
-Delete a task from a specified group by referencing its index in the group's task list.
+Deletes a task from a specified group by referencing its index in the group's task list.
 
 **Format**: `del_t_g i/INDEX gn/GROUP_NAME`
 
@@ -655,7 +655,7 @@ Deletes a task from all groups that contain it.
 ###### Scenario #1 Delete task with index `2`
 1. Type and execute: `list_t` to see the list of tasks.
 2. After finding the task that you wish to delete, remember its index number (task with index 2 in this example).
-3. Type and execute: `del_t_g i/2`
+3. Type and execute: `del_t i/2`
 This screenshot shows the result of executing `del_t i/2`.
 ![dt.png](images/screenshots/dt.png)
 
@@ -665,47 +665,52 @@ This screenshot shows the result of executing `del_t i/2`.
 
 #### Editing a Task for a Group: `edit_t_g`, `etg`
 
-Explanation of what command does.
+Edits a task from a specified group by referencing its index in the group's task list.
 
 **Format**: `edit_t_g i/INDEX gn/GROUP_NAME [tn/TASK_NAME] [td/TASK_DEADLINE (YYYY-MM-DD HHmm)`
 
 ##### Notes
 
-1. Are there anything that the command cannot do (e.g. cannot change Student Number) or what does it impact (e.g. will
-   remove all students from this deleted group)
-2. For information on the constraints for each parameter used in this command, go
+1. The referenced group name must exits in the T_Assistant.
+2. The index must be valid.
+3. The input deadline must follow the format: `YYYY-MM-DD HHMM` (e.g., `2024-12-01 2359`)
+4. For information on the constraints for each parameter used in this command, go
    to [Command Parameters](#command-parameters).
 
 ##### Usage Scenario (for commands that can be overloaded)
 
-Add more scenarios if necessary
+###### Scenario #1 Edit task with index `1` in `CS2103-F11-1`
+1. Type and execute: `list_t gn/CS2103-F11-1` to see the list of tasks for `CS2103-F11-1`.
+2. After finding the task that you wish to delete, remember its index number (task with index 1 in this example).
+3. Type and execute: `edit_t_g i/1 gn/CS2103-F11-1 tn/v1.4 Release`
+This screenshot shows the result of executing `edit_t_g i/1 gn/CS2103-F11-1 tn/v1.4 Release`.
+![etg.png](images/screenshots/etg.png)
 
-###### Scenario #1
-
-This screenshot shows the result of executing `edit_t_g i/1 gn/CS2103-F12-3 tn/v1.4 Release`.
 
 --------------------------------------------------------------------------------------------------------------------
 
 #### Editing a Task for ALL Groups: `edit_t`, `et`
 
-Explanation of what command does.
+Edits a task from all groups that contain it.
 
 **Format**: `edit_t i/INDEX [tn/TASK_NAME] [td/TASK_DEADLINE (YYYY-MM-DD HHmm)`
 
 ##### Notes
 
-1. Are there anything that the command cannot do (e.g. cannot change Student Number) or what does it impact (e.g. will
-   remove all students from this deleted group)
+1. The index mush be valid.
+2. The input deadline must follow the format: `YYYY-MM-DD HHMM` (e.g., `2024-12-01 2359`)
 2. For information on the constraints for each parameter used in this command, go
    to [Command Parameters](#command-parameters).
 
-##### Usage Scenario (for commands that can be overloaded)
+##### Usage Scenario
 
-Add more scenarios if necessary
+###### Scenario #1 Edit task with index `1`
+1. Type and execute: `list_t` to see the list of tasks.
+2. After finding the task that you wish to delete, remember its index number (task with index 2 in this example).
+3. Type and execute: `edit_t i/2`
 
-###### Scenario #1
-
-This screenshot shows the result of executing `edit_t i/1 td/2024-11-20 1200`.
+This screenshot shows the result of executing `edit_t i/2 tn/PE`.
+![et.png](images/screenshots/et.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
